@@ -1,0 +1,12 @@
+<div role="main">
+  <ckeditor
+    [editor]="ckeditor"
+    [data]="editorContent"
+    [config]="editorConfig"
+    (change)="onChange($event)"
+  ></ckeditor>
+</div>
+
+<button (click)="submit()">Post</button>
+
+<output [innerHTML]="output"></output>
