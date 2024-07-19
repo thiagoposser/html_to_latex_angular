@@ -26,3 +26,31 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 # html_to_latex_angular
+
+
+# HtmlToLatexAngular
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+
+## Requisitos
+
+- Node.js (recomenda-se a versão LTS)
+- npm (ou yarn)
+
+## Instalação
+
+Siga os passos abaixo para configurar o projeto em sua máquina local:
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/thiagoposser/html_to_latex_angular.git
+
+Navegue até o diretório do projeto:
+cd html_to_latex_angular
+
+Instale as dependências do projeto:
+npm install
+
+Instale o CKEditor e o pacote Angular CKEditor:
+npm install @ckeditor/ckeditor5-angular @ckeditor/ckeditor5-build-classic
