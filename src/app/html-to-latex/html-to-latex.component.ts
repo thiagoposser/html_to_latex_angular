@@ -3,40 +3,31 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { DomSanitizer } from '@angular/platform-browser';
 
-// https://medium.com/vakifbank-teknoloji/using-ckeditor-5-with-an-angular-application-134764ba33a4
-// https://github.com/sibiraj-s/ngx-editor
+import '@ckeditor/ckeditor5-build-classic/build/translations/pt';
 
 const editorContent = `
-  <h1>Hello from CKEditor 5!</h1>
-  <h2>Check the inspector below</h2>
-  <ul>
-    <li>Check the Model</li>
-    <li>See the View</li>
-    <li>Check available commands</li>
-  </ul>
+<h1>Bem-vindo ao HtmlToLatexAngular</h1>
+<p>Este conversor permite que você escreva conteúdo rico utilizando o CKEditor 5 e, em seguida, converta esse conteúdo para o formato LaTeX.</p>
+<ol>
+  <li><strong>Escreva seu conteúdo no editor:</strong>
+    <p>Use as funcionalidades do CKEditor 5 para criar e formatar seu texto. Você pode adicionar cabeçalhos, listas, negrito, itálico, links, entre outras opções.</p>
+  </li>
+  <li><strong>Visualize o conteúdo gerado:</strong>
+    <p>Utilize a seção abaixo do editor para inspecionar o conteúdo em HTML gerado pelo CKEditor. Isso permitirá que você veja como seu texto está sendo estruturado antes de convertê-lo para LaTeX.</p>
+  </li>
+</ol>
 `;
 
 const editorConfig = {
-  // ui: 'pt',
-  // language: 'pt',
+  language: 'pt',
   toolbar: {
     items: [
-      'undo',
-      'redo',
-      '|',
-      'heading',
-      '|',
-      'bold',
-      'italic',
-      'link',
-      '|',
-      'strikethrough',
-      'code',
-      '|', // Não tem ainda
-      'bulletedList',
-      'numberedList',
-    ],
-  },
+      'undo', 'redo', '|', 'heading', '|', 'bold', 'italic', 'link', '|',
+      'strikethrough', 'code', '|', 'bulletedList', 'numberedList', '|',
+      'outdent', 'indent', '|', 'blockQuote', 'insertTable', '|',
+      'mediaEmbed', 'removeFormat'
+    ]
+  }
 };
 
 @Component({
@@ -45,11 +36,10 @@ const editorConfig = {
   styleUrls: ['./html-to-latex.component.css']
 })
 export class HtmlToLatexComponent {
-
-  output: any;
-  ckeditor = ClassicEditor;
-  editorConfig = editorConfig;
-  editorContent = editorContent;
+  public Editor = ClassicEditor;
+  public editorConfig = editorConfig;
+  public editorContent = editorContent;
+  public output: any;
 
   constructor(private domSanitizer: DomSanitizer) {}
 
